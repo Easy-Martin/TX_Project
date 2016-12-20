@@ -1,109 +1,227 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>天禧嘉福  |  首页</title>
-<link rel="stylesheet" href="/static/css/index.css">
-<link rel="stylesheet" href="/static/css/reset.css">
+  <meta charset="UTF-8">
+  <title>天禧嘉福 | 首页</title>
+  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <script src="/static/js/jssor.slider.min.js"></script>
+  <script>
+        jssor_1_slider_init = function (containerId) {
+
+            var jssor_1_SlideshowTransitions = [
+              { $Duration: 1200, x: 0.2, y: -0.1, $Delay: 20, $Cols: 8, $Rows: 4, $Clip: 15, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $Formation: $JssorSlideshowFormations$.$FormationStraightStairs, $Assembly: 260, $Easing: { $Left: $Jease$.$InWave, $Top: $Jease$.$InWave, $Clip: $Jease$.$OutQuad }, $Outside: true, $Round: { $Left: 1.3, $Top: 2.5 } },
+              { $Duration: 1500, x: 0.3, y: -0.3, $Delay: 20, $Cols: 8, $Rows: 4, $Clip: 15, $During: { $Left: [0.1, 0.9], $Top: [0.1, 0.9] }, $SlideOut: true, $Formation: $JssorSlideshowFormations$.$FormationStraightStairs, $Assembly: 260, $Easing: { $Left: $Jease$.$InJump, $Top: $Jease$.$InJump, $Clip: $Jease$.$OutQuad }, $Outside: true, $Round: { $Left: 0.8, $Top: 2.5 } },
+              { $Duration: 1500, x: 0.2, y: -0.1, $Delay: 20, $Cols: 8, $Rows: 4, $Clip: 15, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $Formation: $JssorSlideshowFormations$.$FormationStraightStairs, $Assembly: 260, $Easing: { $Left: $Jease$.$InWave, $Top: $Jease$.$InWave, $Clip: $Jease$.$OutQuad }, $Outside: true, $Round: { $Left: 0.8, $Top: 2.5 } },
+              { $Duration: 1500, x: 0.3, y: -0.3, $Delay: 80, $Cols: 8, $Rows: 4, $Clip: 15, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $Easing: { $Left: $Jease$.$InJump, $Top: $Jease$.$InJump, $Clip: $Jease$.$OutQuad }, $Outside: true, $Round: { $Left: 0.8, $Top: 2.5 } },
+              { $Duration: 1800, x: 1, y: 0.2, $Delay: 30, $Cols: 10, $Rows: 5, $Clip: 15, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $SlideOut: true, $Reverse: true, $Formation: $JssorSlideshowFormations$.$FormationStraightStairs, $Assembly: 2050, $Easing: { $Left: $Jease$.$InOutSine, $Top: $Jease$.$OutWave, $Clip: $Jease$.$InOutQuad }, $Outside: true, $Round: { $Top: 1.3 } },
+              { $Duration: 1000, $Delay: 30, $Cols: 8, $Rows: 4, $Clip: 15, $SlideOut: true, $Formation: $JssorSlideshowFormations$.$FormationStraightStairs, $Assembly: 2049, $Easing: $Jease$.$OutQuad },
+              { $Duration: 1000, $Delay: 80, $Cols: 8, $Rows: 4, $Clip: 15, $SlideOut: true, $Easing: $Jease$.$OutQuad },
+              { $Duration: 1000, y: -1, $Cols: 12, $Formation: $JssorSlideshowFormations$.$FormationStraight, $ChessMode: { $Column: 12 } },
+              { $Duration: 1000, x: -0.2, $Delay: 40, $Cols: 12, $SlideOut: true, $Formation: $JssorSlideshowFormations$.$FormationStraight, $Assembly: 260, $Easing: { $Left: $Jease$.$InOutExpo, $Opacity: $Jease$.$InOutQuad }, $Opacity: 2, $Outside: true, $Round: { $Top: 0.5 } },
+              { $Duration: 2000, y: -1, $Delay: 60, $Cols: 15, $SlideOut: true, $Formation: $JssorSlideshowFormations$.$FormationStraight, $Easing: $Jease$.$OutJump, $Round: { $Top: 1.5 } }
+            ];
+
+            var jssor_1_options = {
+                $AutoPlay: true,
+                $PauseOnHover:0,
+                $SlideshowOptions: {
+                    $Class: $JssorSlideshowRunner$,
+                    $Transitions: jssor_1_SlideshowTransitions,
+                    $TransitionsOrder: 1
+                },
+                $ThumbnailNavigatorOptions: {
+                  $Class: $JssorThumbnailNavigator$,
+                  $Cols: 4,
+                  $Orientation: 1,
+                  $AutoCenter:1,
+                  $Align:1,
+                  
+                },
+                $BulletNavigatorOptions: {
+                    $Class: $JssorBulletNavigator$
+                }
+            };
+
+            var jssor_1_slider = new $JssorSlider$(containerId, jssor_1_options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+              
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1200);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            //responsive code end
+        };
+    </script>
 </head>
+
 <body>
-    <div class="top">
-        <div class="login">
-          <div class="cnt_center">
-            
-          </div>
+  <div class="top">
+    <div class="login">
+      <div class="cnt_center">
+        <div class="login_register">
+          <img src="/static/img/user.png" alt="" width="24">
+          <span>会员</span> <a href="/">登陆</a> / <a href="/">注册</a>
         </div>
-        <div class="nav">
-          <div class="cnt_center">
-            <a href="/" class="logo"></a>
-            <div class="nav_bar">
-              <a href="/">首页<br>HOME</a>
-              <a href="/">乐慕<br>LAMOURSE</a>
-              <a href="/">前戏<br>PROJOY</a>
-              <a href="/">会员中心<br>USER ENTER</a>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="cnt_center">
+        <a href="/" class="logo"></a>
+        <div class="nav_bar">
+          <a href="/">首页<br>HOME</a>
+          <a href="/">乐慕<br>LAMOURSE</a>
+          <a href="/">前戏<br>PROJOY</a>
+          <a href="/">会员中心<br>USER ENTER</a>
+        </div>
+      </div>
+    </div>
+    <div class="slider_layout">
+      <div class="cnt_center">
+
+        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1200px; height: 655px; overflow: hidden; visibility: hidden;">
+          <!-- Loading Screen -->
+          <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1200px; height: 563px; overflow: hidden;">
+            <div data-p="112.50" style="display: none;">
+              <img data-u="image" src="/static/img/slider1.jpg" width="1200" />
+              <div data-u="thumb">
+                  <div class="t">Banner Rotator</div>
+                  <div class="c">360+ touch swipe slideshow effects</div>
+              </div>
+            </div>
+            <div data-p="112.50" style="display: none;">
+              <img data-u="image" src="/static/img/slider2.jpg" width="1200" />
+              <div data-u="thumb">
+                  <div class="t">Banner Rotator</div>
+                  <div class="c">360+ touch swipe slideshow effects</div>
+              </div>
+            </div>
+            <div data-p="112.50" style="display: none;">
+              <img data-u="image" src="/static/img/slider3.jpg" width="1200" />
+              <div data-u="thumb">
+                  <div class="t">Banner Rotator</div>
+                  <div class="c">360+ touch swipe slideshow effects</div>
+              </div>
+            </div>
+            <div data-p="112.50" style="display: none;">
+              <img data-u="image" src="/static/img/slider4.jpg" width="1200" />
+              <div data-u="thumb">
+                  <div class="t">Banner Rotator</div>
+                  <div class="c">360+ touch swipe slideshow effects</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slider">
-          <div class="cnt_center">
-            
+          <!-- Bullet Navigator -->
+          <div data-u="navigator" class="jssorb01" style="bottom:106px;right:16px;">
+            <div data-u="prototype" style="width:12px;height:12px;"></div>
           </div>
+          <!-- Thumbnail Navigator -->
+        <div data-u="thumbnavigator" id="jssort11" class="jssort11" style="position:absolute;left:0px;top:653px;font-family:Arial, Helvetica, sans-serif;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;width:1200px;height:92px;" data-autocenter="2">
+            <!-- Thumbnail Item Skin Begin -->
+            <div data-u="slides" style="cursor: default;">
+                <div data-u="prototype" class="p">
+                    <div data-u="thumbnailtemplate" class="tp"></div>
+                </div>
+            </div>
+            <!-- Thumbnail Item Skin End -->
         </div>
-    </div>
-    <div class="content">
-      <div class="content_bar content_bar_1">
-        <span class="circle"></span>
-        <h2>综合</h2>
-        <ul>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-        </ul>
-      </div>
-      <div class="content_bar content_bar_2">
-        <span class="circle"></span>
-        <h2>公共</h2>
-        <ul>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-        </ul>
-      </div>
-      <div class="content_bar content_bar_3">
-        <span class="circle"></span>
-        <h2>新闻</h2>
-        <ul>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-          <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
-        </ul>
+        </div>
+        
       </div>
     </div>
-    <div class="content_2">
-        <div class="nav_2">
-          <a href="/">性爱工作室</a>
-          <a href="/">情趣聊天室</a>
-          <a href="/">私密工作室</a>
-        </div>
-        <div class="cnt2_img">
+  </div>
+  <div class="content">
+    <div class="content_bar content_bar_1">
+      <span class="circle"></span>
+      <h2>综合</h2>
+      <ul>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+      </ul>
+    </div>
+    <div class="content_bar content_bar_2">
+      <span class="circle"></span>
+      <h2>公共</h2>
+      <ul>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+      </ul>
+    </div>
+    <div class="content_bar content_bar_3">
+      <span class="circle"></span>
+      <h2>新闻</h2>
+      <ul>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+        <li>的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿的撒旦撒倒萨倒萨阿斯顿</li>
+      </ul>
+    </div>
+  </div>
+  <div class="content_2">
+    <div class="nav_2">
+      <a href="/">性爱工作室</a>
+      <a href="/">情趣聊天室</a>
+      <a href="/">私密工作室</a>
+    </div>
+    <div class="cnt2_img">
 
-        </div>
     </div>
-    <div class="bottom">
-      <div class="cnt_center">
-        <dl>
-          <dt>服务介绍</dt>
-          <dd>服务流程</dd>
-          <dd>产品保修</dd>
-          <dd>用户协议</dd>
-        </dl>
-        <dl>
-          <dt>支付方式</dt>
-          <dd>支付宝支付</dd>
-          <dd>微信支付</dd>
-        </dl>
-        <dl>
-          <dt>服务热线</dt>
-          <dd>周一至周五</dd>
-        </dl>
-        <dl>
-          <dt>联系我们</dt>
-          <dd>广告与市场合作</dd>
-          <dd>联系方式</dd>
-          <dd>投诉信箱</dd>
-          <dd>招贤纳士</dd>
-        </dl>
-        <ul>
-          <li>@2016 www.projoy 沪ICPxxxxxxx号</li>
-          <li>上海天禧嘉福信息科技发展有限公司  版权所有</li>
-        </ul>
-      </div>
+  </div>
+  <div class="bottom">
+    <div class="cnt_center">
+      <dl>
+        <dt>服务介绍</dt>
+        <dd>服务流程</dd>
+        <dd>产品保修</dd>
+        <dd>用户协议</dd>
+      </dl>
+      <dl>
+        <dt>支付方式</dt>
+        <dd>支付宝支付</dd>
+        <dd>微信支付</dd>
+      </dl>
+      <dl>
+        <dt>服务热线</dt>
+        <dd>周一至周五</dd>
+      </dl>
+      <dl>
+        <dt>联系我们</dt>
+        <dd>广告与市场合作</dd>
+        <dd>联系方式</dd>
+        <dd>投诉信箱</dd>
+        <dd>招贤纳士</dd>
+      </dl>
+      <ul>
+        <li>@2016 www.projoy 沪ICPxxxxxxx号</li>
+        <li>上海天禧嘉福信息科技发展有限公司 版权所有</li>
+      </ul>
     </div>
+  </div>
+  <script>
+    jssor_1_slider_init('jssor_1');
+    
+  </script>
 </body>
+
 </html>
