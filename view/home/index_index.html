@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <title>天禧嘉福 | 首页</title>
-  <link rel="stylesheet" href="/static/css/index.css">
-  <link rel="stylesheet" href="/static/css/reset.css">
-  <script src="/static/js/jssor.slider.min.js"></script>
+  <%include inc/head.html%>
+
+  <link rel="stylesheet" href="/static/public/css/index.css">
+  
+  <script src="/static/public/js/jssor.slider.min.js"></script>
   <script>
         jssor_1_slider_init = function (containerId) {
-
             var jssor_1_SlideshowTransitions = [
               { $Duration: 1200, x: 0.2, y: -0.1, $Delay: 20, $Cols: 8, $Rows: 4, $Clip: 15, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $Formation: $JssorSlideshowFormations$.$FormationStraightStairs, $Assembly: 260, $Easing: { $Left: $Jease$.$InWave, $Top: $Jease$.$InWave, $Clip: $Jease$.$OutQuad }, $Outside: true, $Round: { $Left: 1.3, $Top: 2.5 } },
               { $Duration: 1500, x: 0.3, y: -0.3, $Delay: 20, $Cols: 8, $Rows: 4, $Clip: 15, $During: { $Left: [0.1, 0.9], $Top: [0.1, 0.9] }, $SlideOut: true, $Formation: $JssorSlideshowFormations$.$FormationStraightStairs, $Assembly: 260, $Easing: { $Left: $Jease$.$InJump, $Top: $Jease$.$InJump, $Clip: $Jease$.$OutQuad }, $Outside: true, $Round: { $Left: 0.8, $Top: 2.5 } },
@@ -73,7 +74,7 @@
     <div class="login">
       <div class="cnt_center">
         <div class="login_register">
-          <img src="/static/img/user.png" alt="" width="24">
+          <img src="/static/public/img/user.png" alt="" width="24">
           <span>会员</span> <a href="/">登陆</a> / <a href="/">注册</a>
         </div>
       </div>
@@ -82,10 +83,10 @@
       <div class="cnt_center">
         <a href="/" class="logo"></a>
         <div class="nav_bar">
-          <a href="/">首页<br>HOME</a>
-          <a href="/">乐慕<br>LAMOURSE</a>
-          <a href="/">前戏<br>PROJOY</a>
-          <a href="/">会员中心<br>USER ENTER</a>
+          <a href="/">首页<br><span>HOME</span></a>
+          <a href="/">乐慕<br><span>LAMOURSE</span></a>
+          <a href="/">前戏<br><span>PROJOY</span></a>
+          <a href="/">会员中心<br><span>USER ENTER</span></a>
         </div>
       </div>
     </div>
@@ -96,28 +97,28 @@
           <!-- Loading Screen -->
           <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1200px; height: 563px; overflow: hidden;">
             <div data-p="112.50" style="display: none;">
-              <img data-u="image" src="/static/img/slider1.jpg" width="1200" />
+              <img data-u="image" src="/static/public/img/slider1.jpg" width="1200" />
               <div data-u="thumb">
                   <div class="t">COMPANY INFORMATION</div>
                   <div class="c">企业信息</div>
               </div>
             </div>
             <div data-p="112.50" style="display: none;">
-              <img data-u="image" src="/static/img/slider3.jpg" width="1200" />
+              <img data-u="image" src="/static/public/img/slider3.jpg" width="1200" />
               <div data-u="thumb">
                   <div class="t">BUSINESS CLUTURE</div>
                   <div class="c">企业文化</div>
               </div>
             </div>
             <div data-p="112.50" style="display: none;">
-              <img data-u="image" src="/static/img/slider2.jpg" width="1200" />
+              <img data-u="image" src="/static/public/img/slider2.jpg" width="1200" />
               <div data-u="thumb">
                   <div class="t">DEVELOPMENT HISTORY</div>
                   <div class="c">发展历史</div>
               </div>
             </div>
             <div data-p="112.50" style="display: none;">
-              <img data-u="image" src="/static/img/slider4.jpg" width="1200" />
+              <img data-u="image" src="/static/public/img/slider4.jpg" width="1200" />
               <div data-u="thumb">
                   <div class="t">TEAM INTRODUCTION</div>
                   <div class="c">团队介绍</div>

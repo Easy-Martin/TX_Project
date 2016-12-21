@@ -1,6 +1,7 @@
 .top {
     height: 800px;
-    background: url(/static/img/bg.jpg) no-repeat center center;
+    background: url(/static/public/img/bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
 }
 
 .login {
@@ -36,7 +37,7 @@
 
 .logo {
     display: inline-block;
-    background: url(/static/img/logo.jpg);
+    background: url(/static/public/img/logo.jpg);
     width: 300px;
     height: 100%;
 }
@@ -71,15 +72,15 @@
 }
 
 .content_bar_1 {
-    background-image: url(/static/img/1.jpg)
+    background-image: url(/static/public/img/1.jpg)
 }
 
 .content_bar_2 {
-    background-image: url(/static/img/2.jpg)
+    background-image: url(/static/public/img/2.jpg)
 }
 
 .content_bar_3 {
-    background-image: url(/static/img/3.jpg)
+    background-image: url(/static/public/img/3.jpg)
 }
 
 .content_bar h2 {
@@ -131,7 +132,8 @@
 .cnt2_img {
     height: 600px;
     width: 100%;
-    background: url(/static/img/bt.jpg) no-repeat center center;
+    background: url(/static/public/img/bt.jpg) no-repeat center center;
+    background-size: 100% 100%;
 }
 
 .bottom {
