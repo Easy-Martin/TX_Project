@@ -1,182 +1,218 @@
-.top{
-    height:800px;
+.top {
+    height: 800px;
     background: url(/static/img/bg.jpg) no-repeat center center;
 }
-.login{
-    height:85px;
+
+.login {
+    height: 85px;
 }
-.login_register{
-    padding:28px 0;
-    font-size:16px;
+
+.login_register {
+    padding: 28px 0;
+    font-size: 16px;
     text-align: right;
-    color:#fff;
+    color: #fff;
 }
-.login_register img{
+
+.login_register img {
     vertical-align: middle
 }
-.login_register a{
-    color:#fff;
+
+.login_register a {
+    color: #fff;
     border-bottom: 1px solid #fff;
-    
 }
-.nav{
-    height:60px;
+
+.nav {
+    height: 60px;
     background: #fd7304
 }
-.cnt_center{
+
+.cnt_center {
     width: 1200px;
-    margin:0 auto;
-    height:100%;
+    margin: 0 auto;
+    height: 100%;
 }
-.logo{
+
+.logo {
     display: inline-block;
     background: url(/static/img/logo.jpg);
-    width:300px;
-    height:100%;
+    width: 300px;
+    height: 100%;
 }
-.nav_bar{
+
+.nav_bar {
     float: right;
 }
-.nav_bar a{
+
+.nav_bar a {
     display: inline-block;
     text-align: center;
-    color:#fff;
-    padding-top:10px;
+    color: #fff;
+    padding-top: 10px;
     font-size: 14px;
-    margin-left:30px;
+    margin-left: 30px;
 }
-.content{
-    width:1200px;
-    margin:0 auto;
-    height:400px;
+
+.content {
+    width: 1200px;
+    margin: 0 auto;
+    height: 400px;
 }
-.content_bar{
+
+.content_bar {
     width: 30%;
     display: inline-block;
-    padding-top:50px;
-    height:350px;
-    margin:0 1.5%;
+    padding-top: 50px;
+    height: 350px;
+    margin: 0 1.5%;
     background: #fff no-repeat center 50px;
     position: relative;
-
 }
-.content_bar_1{
+
+.content_bar_1 {
     background-image: url(/static/img/1.jpg)
 }
-.content_bar_2{
+
+.content_bar_2 {
     background-image: url(/static/img/2.jpg)
 }
-.content_bar_3{
+
+.content_bar_3 {
     background-image: url(/static/img/3.jpg)
 }
-.content_bar h2{
-    padding-top:120px;
+
+.content_bar h2 {
+    padding-top: 120px;
     text-align: center;
     font-size: 18px;
 }
-.content_bar ul{
-    padding-top:20px;
+
+.content_bar ul {
+    padding-top: 20px;
 }
-.content_bar li{
+
+.content_bar li {
     font-size: 14px;
-    padding:6px 0;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    padding: 6px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.circle{
+
+.circle {
     position: absolute;
     width: 6px;
     height: 6px;
     background: #fd7304;
     border-radius: 100%;
-    left:-12px;
-    top:227px;
+    left: -12px;
+    top: 227px;
 }
-.nav_2{
+
+.nav_2 {
     background: #fd7304;
-    height:56px;
-    margin:0 auto;
-    padding:0 236px;
-    width:1200px;
+    height: 56px;
+    margin: 0 auto;
+    padding: 0 236px;
+    width: 1200px;
     box-sizing: border-box;
     margin-bottom: 20px;
 }
-.nav_2 a{
+
+.nav_2 a {
     display: inline-block;
-    padding-left:120px;
-    font-size:16px;
-    color:#fff;
-    padding-top:15px;
-}
-.cnt2_img{
-    height:600px;
-    width:100%;
-    background: url(/static/img/bt.jpg) no-repeat center center;
-}
-.bottom{
-    background: #fd7304;
-    height:180px;
-}
-.bottom dl{
-    float:left;
-    padding-top:25px;
-    padding-right:90px;
-    font-size: 14px;
-    color:#fff;
-}
-.bottom dt{
-    padding-bottom:20px;
-}
-.bottom ul {
-    float: right;
-    padding-top:100px;
-    font-size: 14px;
-    color:#fff;
+    padding-left: 120px;
+    font-size: 16px;
+    color: #fff;
+    padding-top: 15px;
 }
 
- /* jssor slider bullet navigator skin 01 css */
-        /*
+.cnt2_img {
+    height: 600px;
+    width: 100%;
+    background: url(/static/img/bt.jpg) no-repeat center center;
+}
+
+.bottom {
+    background: #fd7304;
+    height: 180px;
+}
+
+.bottom dl {
+    float: left;
+    padding-top: 25px;
+    padding-right: 90px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.bottom dt {
+    padding-bottom: 20px;
+}
+
+.bottom ul {
+    float: right;
+    padding-top: 100px;
+    font-size: 14px;
+    color: #fff;
+}
+
+
+/* jssor slider bullet navigator skin 01 css */
+
+
+/*
         .jssorb01 div           (normal)
         .jssorb01 div:hover     (normal mouseover)
         .jssorb01 .av           (active)
         .jssorb01 .av:hover     (active mouseover)
         .jssorb01 .dn           (mousedown)
         */
-        .jssorb01 {
-            position: absolute;
-            left: 50%;
-            margin-left:-39px;
-        }
 
-            .jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
-                position: absolute;
-                /* size of bullet elment */
-                width: 12px;
-                height: 12px;
-                filter: alpha(opacity=70);
-                opacity: .7;
-                overflow: hidden;
-                cursor: pointer;
-                border-radius: 100%;
-            }
+.jssorb01 {
+    position: absolute;
+    left: 50%;
+    margin-left: -39px;
+}
 
-            .jssorb01 div {
-                background-color: #aaa;
-            }
+.jssorb01 div,
+.jssorb01 div:hover,
+.jssorb01 .av {
+    position: absolute;
+    /* size of bullet elment */
+    width: 12px;
+    height: 12px;
+    filter: alpha(opacity=70);
+    opacity: .7;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 100%;
+}
 
-                .jssorb01 div:hover, .jssorb01 .av:hover {
-                    background-color: #d3d3d3;
-                }
+.jssorb01 div {
+    background-color: #aaa;
+}
 
-            .jssorb01 .av {
-                background-color: #fff;
-            }
+.jssorb01 div:hover,
+.jssorb01 .av:hover {
+    background-color: #d3d3d3;
+}
 
-            .jssorb01 .dn, .jssorb01 .dn:hover {
-                background-color: #555555;
-            }
+.jssorb01 .av {
+    background-color: #fff;
+}
 
-        /* jssor slider arrow navigator skin 05 css */
-        /*
+.jssorb01 .dn,
+.jssorb01 .dn:hover {
+    background-color: #555555;
+}
+
+
+/* jssor slider arrow navigator skin 05 css */
+
+
+/*
         .jssora05l                  (normal)
         .jssora05r                  (normal)
         .jssora05l:hover            (normal mouseover)
@@ -186,37 +222,177 @@
         .jssora05l.jssora05lds      (disabled)
         .jssora05r.jssora05rds      (disabled)
         */
-        .jssora05l, .jssora05r {
-            display: block;
-            position: absolute;
-            /* size of arrow element */
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            background: url(../img/a17.png) no-repeat;
-            overflow: hidden;
-        }
-        .jssora05l { background-position: -10px -40px; }
-        .jssora05r { background-position: -70px -40px; }
-        .jssora05l:hover { background-position: -130px -40px; }
-        .jssora05r:hover { background-position: -190px -40px; }
-        .jssora05l.jssora05ldn { background-position: -250px -40px; }
-        .jssora05r.jssora05rdn { background-position: -310px -40px; }
 
-        .jssora05l.jssora05lds { background-position: -10px -40px; opacity: .3; pointer-events: none; }
-        .jssora05r.jssora05rds { background-position: -70px -40px; opacity: .3; pointer-events: none; }
-         /* jssor slider thumbnail navigator skin 11 css *//*.jssort11 .p            
+.jssora05l,
+.jssora05r {
+    display: block;
+    position: absolute;
+    /* size of arrow element */
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: url(../img/a17.png) no-repeat;
+    overflow: hidden;
+}
+
+.jssora05l {
+    background-position: -10px -40px;
+}
+
+.jssora05r {
+    background-position: -70px -40px;
+}
+
+.jssora05l:hover {
+    background-position: -130px -40px;
+}
+
+.jssora05r:hover {
+    background-position: -190px -40px;
+}
+
+.jssora05l.jssora05ldn {
+    background-position: -250px -40px;
+}
+
+.jssora05r.jssora05rdn {
+    background-position: -310px -40px;
+}
+
+.jssora05l.jssora05lds {
+    background-position: -10px -40px;
+    opacity: .3;
+    pointer-events: none;
+}
+
+.jssora05r.jssora05rds {
+    background-position: -70px -40px;
+    opacity: .3;
+    pointer-events: none;
+}
+
+
+/* jssor slider thumbnail navigator skin 11 css */
+
+
+/*.jssort11 .p            
          (normal).jssort11 .p:hover      (normal mouseover).jssort11 .pav         
           (active).jssort11 .pav:hover    (active mouseover).jssort11 .pdn          
           (mousedown)*/
-          #jssort11{
-              top:563px !important;
-          }
-          .jssort11 .p {    position: absolute;    bottom: 0;    left: 0;    width: 300px;    height:92px;    background: #181818;}
-          .jssort11 .tp {    position: absolute;    bottom: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}
-          .jssort11 .i, .jssort11 .pav:hover .i {    position: absolute;    top: 3px;    left: 3px;    width: 60px;    height: 30px;    border: white 1px dashed;}
-          * html .jssort11 .i {    width /**/: 62px;    height /**/: 32px;}.jssort11 .pav .i {    border: white 1px solid;}
-          .jssort11 .t, .jssort11 .pav:hover .t {    position: absolute;    top: 3px;    left: 68px;    width: 129px;    height: 32px;    line-height: 32px;    text-align: center;    color: #fc9835;    font-size: 13px;    font-weight: 700;}
-          .jssort11 .pav .t, .jssort11 .p:hover .t {    color: #fff;}.jssort11 .c, .jssort11 .pav:hover .c {    position: absolute;    top: 38px;    left: 3px;    width: 194px;    height: 32px;    line-height: 32px;    color: #fff;    font-size: 11px;    font-weight: 400;    overflow: hidden;}.jssort11 .pav .c, .jssort11 .p:hover .c {    color: #fc9835;}.jssort11 .t, .jssort11 .c {    transition: color 2s;    -moz-transition: color 2s;    -webkit-transition: color 2s;    -o-transition: color 2s;}
-          .jssort11 .p:hover .t, .jssort11 .pav:hover .t, .jssort11 .p:hover .c, .jssort11 .pav:hover .c {    transition: none;    -moz-transition: none;    -webkit-transition: none;    -o-transition: none;}
-          .jssort11 .p:hover, .jssort11 .pav:hover {    background: #333;}.jssort11 .pav, .jssort11 .p.pdn {    background: #462300;}
+
+#jssort11 {
+    top: 563px !important;
+}
+
+.jssort11 .p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 92px;
+    background: rgba(0,0,0,0);
+}
+
+.jssort11 .tp {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom:8px solid;
+}
+.jssort11 [data-u="slides"] div:nth-child(2) .tp{
+    border-bottom-color: #fd7303;
+}
+.jssort11 [data-u="slides"] div:nth-child(3) .tp{
+    border-bottom-color: #fffb81;
+}
+.jssort11 [data-u="slides"] div:nth-child(4) .tp{
+    border-bottom-color: #b93617;
+}
+.jssort11 [data-u="slides"] div:nth-child(5) .tp{
+    border-bottom-color: #4c1409;
+}
+.jssort11 .i,
+.jssort11 .pav:hover .i {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 60px;
+    height: 30px;
+    border: white 1px dashed;
+}
+
+* html .jssort11 .i {
+    width/**/
+    : 62px;
+    height/**/
+    : 32px;
+}
+
+.jssort11 .pav .i {
+    border: white 1px solid;
+}
+
+.jssort11 .t,
+.jssort11 .pav:hover .t {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    padding-top:20px;
+}
+
+.jssort11 .pav .t,
+.jssort11 .p:hover .t {
+    color: #fff;
+}
+
+.jssort11 .c,
+.jssort11 .pav:hover .c {
+    width: 100%;
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.jssort11 .pav .c,
+.jssort11 .p:hover .c {
+    color: #fff;
+}
+
+.jssort11 .t,
+.jssort11 .c {
+    transition: background 2s;
+    -moz-transition:background 2s;
+    -webkit-transition: background 2s;
+    -o-transition: background 2s;
+}
+
+.jssort11 .p:hover .t,
+.jssort11 .pav:hover .t,
+.jssort11 .p:hover .c,
+.jssort11 .pav:hover .c {
+    transition: background 2s;
+    -moz-transition: background 2s;
+    -webkit-transition: background 2s;
+    -o-transition: background 2s;
+}
+
+.jssort11 .p:hover,
+.jssort11 .pav:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+.jssort11 .pav,
+.jssort11 .p.pdn {
+    background: rgba(0,0,0,0.5);
+}
