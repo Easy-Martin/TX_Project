@@ -8,6 +8,18 @@ const routes = [
     component: resolve => {
       require(['./components/Hello'], resolve)
     }
+  },
+  {
+    path: '/login',
+    component: resolve => {
+      require(['./components/Login'], resolve)
+    }
+  },
+  {
+    path: '/index',
+    component: resolve => {
+      require(['./components/Index'], resolve)
+    }
   }
 ];
 

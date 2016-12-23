@@ -71,7 +71,7 @@ module.exports = {
     loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
     postcss: [
       require('autoprefixer')({
-        browsers: ['iOS 7']
+        browsers: ['last 2 versions']
       })
     ]
   }

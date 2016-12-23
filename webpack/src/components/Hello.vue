@@ -1,14 +1,12 @@
 <template>
     <div>
-        hello word
+        <div> 
+            
+        </div>
     </div>
 </template>
 <script>
     export default{
-        name:'test'
+        name:'Hello'
     }
 </script>
-
-<style>
-    @import '../assets/reset.css';
-</style>
