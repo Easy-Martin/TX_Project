@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天禧嘉福 | 团队介绍</title>
+    <%include inc/head.html%>
+    <link rel="stylesheet" href="/static/public/css/team.css">
+</head>
+<body>
+    <div class="top">
+        <%include inc/header.html%>
+        <div class="info">
+            <div class="info_ly"></div>
+        </div>
+    </div>
+    <div class="content">
+        <% list.forEach(function(item){%>
+        <div class="part">
+            <span class="icon"></span>
+            <dl>
+                <dd class="zw"><%=item.office%></dd>
+                <dt><%=item.name%></dt>
+                <dd class="des"><%=item.description%></dd>
+            </dl>
+        </div>
+        <%})%>
+    </div>
+    <%include inc/footer.html%>
+</body>
+</html>

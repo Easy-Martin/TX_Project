@@ -1,0 +1,43 @@
+.top{
+    height:1227px;
+}
+.login_register ,.login_register a ,.login_register span{
+    color: #fd7303 !important;
+    
+}
+.login_register a{
+    border-bottom: 1px solid #fd7303 !important;
+}
+.info{
+    height:1085px;
+    background: url(/static/public/img/culture.jpg) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.info_ly{
+    width: 880px;
+    margin:0 auto;
+    padding-top:228px;
+}
+.info_ly .part{
+    font-size: 15px;
+    color:#fff;
+    padding-bottom:78px;
+    
+}
+.info_ly .part img{
+    display: block;
+    padding:10px 0;
+}
+.info_ly .part_right{
+    text-align: right;
+    font-size: 25px;
+}
+.plug{
+    color:#fd7303;
+}
+.info_ly .part .center{
+    padding-top:32px;
+    color:#aaa;
+    line-height: 24px;
+}

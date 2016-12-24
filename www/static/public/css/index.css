@@ -3,58 +3,10 @@
     background: url(/static/public/img/bg.jpg) no-repeat center center;
     background-size: 100% 100%;
 }
-
-.login {
-    height: 85px;
+.login_register .icon {
+    background: url(/static/public/img/user.png) no-repeat center center  !important;
+    background-size:24px 24px  !important;
 }
-
-.login_register {
-    padding: 28px 0;
-    font-size: 16px;
-    text-align: right;
-    color: #fff;
-}
-
-.login_register img {
-    vertical-align: middle
-}
-
-.login_register a {
-    color: #fff;
-    border-bottom: 1px solid #fff;
-}
-
-.nav {
-    height: 60px;
-    background: #fd7304
-}
-
-.cnt_center {
-    width: 1200px;
-    margin: 0 auto;
-    height: 100%;
-}
-
-.logo {
-    display: inline-block;
-    background: url(/static/public/img/logo.jpg);
-    width: 300px;
-    height: 100%;
-}
-
-.nav_bar {
-    float: right;
-}
-
-.nav_bar a {
-    display: inline-block;
-    text-align: center;
-    color: #fff;
-    padding-top: 10px;
-    font-size: 14px;
-    margin-left: 30px;
-}
-
 .content {
     width: 1200px;
     margin: 0 auto;
@@ -134,30 +86,16 @@
     width: 100%;
     background: url(/static/public/img/bt.jpg) no-repeat center center;
     background-size: 100% 100%;
+    position: relative;
 }
-
-.bottom {
-    background: #fd7304;
-    height: 180px;
-}
-
-.bottom dl {
-    float: left;
-    padding-top: 25px;
-    padding-right: 90px;
-    font-size: 14px;
-    color: #fff;
-}
-
-.bottom dt {
-    padding-bottom: 20px;
-}
-
-.bottom ul {
-    float: right;
-    padding-top: 100px;
-    font-size: 14px;
-    color: #fff;
+.cnt2_img .bt2{
+    position: absolute;
+    left:50%;
+    width: 1200px;
+    margin-left: -600px;
+    height:600px;
+    background: url(/static/public/img/bt2.png) no-repeat center center;
+    background-size: 100% 100%;
 }
 
 

@@ -1,0 +1,62 @@
+.top{
+    height:646px;
+}
+.login_register ,.login_register a ,.login_register span{
+    color: #fd7303 !important;
+    
+}
+.login_register a{
+    border-bottom: 1px solid #fd7303 !important;
+}
+.info{
+    height:500px;
+    position: relative;
+    background: #000;
+}
+.info_ly{
+    height:500px;
+    width: 1200px;
+    background: url(/static/public/img/team.jpg) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    position: absolute;
+    left:50%;
+    margin-left:-600px;
+}
+.content{
+    width: 1200px;
+    margin:0 auto;
+    padding:45px 0;
+    overflow: hidden;
+    zoom:1;
+}
+.part{
+    width: 400px;
+    height:380px;
+    padding-bottom: 70px;
+    float: left;
+}
+.part .icon{
+    display: block;
+    width: 16px;
+    height:68px;
+    background: #fd7303;
+    margin-bottom: 20px;
+}
+.part .zw{
+    font-size: 20px;
+    color:#737373;
+    padding-bottom: 14px;
+    font-weight: normal;
+}
+.part dt{
+    font-size:30px;
+    color:#000;
+    padding-bottom: 20px;
+}
+.part .des{
+    width: 302px;
+    line-height: 24px;
+    font-size: 16px;
+    color:#737373;
+}

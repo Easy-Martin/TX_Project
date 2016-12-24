@@ -1,0 +1,88 @@
+.top {
+    height: 646px;
+ 
+}
+.login_register ,.login_register a ,.login_register span{
+    color: #fd7303 !important;
+    
+}
+.login_register a{
+    border-bottom: 1px solid #fd7303 !important;
+}
+.bg{
+    width:100%;
+    height:500px;
+    background: url(/static/public/img/his1.jpg) no-repeat center center;
+    background-size: 100% 100%;
+    position: relative;
+}
+.bg .info{
+    left:50%;
+    position: absolute;
+    width:583px;
+    height:499px;
+    margin-left:-291.5px;
+    background: url(/static/public/img/his2.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+.content{
+    width: 920px;
+    margin:0 auto;
+    padding-top:30px;
+}
+.part{
+    position: relative;
+    height:144px;
+    padding:20px 0;
+}
+.part span{
+    display: inline-block;
+    
+    font-weight: 600;
+    
+}
+.part .year{
+    position: absolute;
+    width: 65px;
+    height:65px;
+    border:4px solid #fd7303;
+    border-radius: 65px;
+    font-size:14px;
+    text-align: center;
+    line-height: 65px;
+    top:20px;
+    left:0;
+    background: #fff;
+}
+.part .month{
+    position: absolute;
+    width: 25px;
+    height:25px;
+    background: #fd7303;
+    line-height: 25px;
+    text-align: center;
+    color:#fff;
+    border-radius: 25px;
+    font-weight: normal;
+    font-size: 12px;
+    top:10px;
+    left:25px;
+}
+.part .info{
+    padding-left:100px;
+    display: table-cell;
+    vertical-align: middle;
+    height:74px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.part .line{
+    position: absolute;
+    height:100%;
+    width:1px;
+    background: #ccc;
+    left:36px;
+}
+.content .part:last-child .line{
+    display: none;
+}

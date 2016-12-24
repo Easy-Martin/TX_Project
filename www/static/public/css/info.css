@@ -1,0 +1,50 @@
+.top{
+    height:646px;
+}
+.login_register ,.login_register a ,.login_register span{
+    color: #fd7303 !important;
+    
+}
+.login_register a{
+    border-bottom: 1px solid #fd7303 !important;
+}
+.info{
+    height:500px;
+    background: url(/static/public/img/info.jpg) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    position: relative;
+}
+.info2{
+    height:500px;
+    width: 1200px;
+    background: url(/static/public/img/info2.png) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    position: absolute;
+    left:50%;
+    margin-left:-600px;
+}
+.content{
+    width: 1200px;
+    margin:0 auto;
+    padding:45px;
+    font-size: 16px;
+}
+.content p{
+    text-indent: 32px;
+    line-height: 26px;
+    padding-bottom:30px;
+}
+.table{
+    empty-cells: hide;
+}
+.table td{
+    border:1px solid #eee;
+    padding:15px 40px;
+}
+.table .title{
+    width: 200px;
+    height:52px;
+    text-align: center;
+}
