@@ -38,10 +38,8 @@
                     username:this.username,
                     password:this.password,
                     callback:(res)=>{
-                        e.target.className = n.replace('disabled','');
-                        e.target.textContent = '登陆';
-
                         if(res.code==0){
+                            sessionStorage.setItem('LOGIN_SESSION',JSON.stringify(res.data))
                             this.$router.replace('/index');
                             this.errMsg = ''
                         }else{
@@ -118,12 +116,12 @@
         };
         .errormsg{
             margin-top:15px;
-            height:30px;
             font-size:14px;
-            line-height:30px;
             text-align:center;
             border-radius:30px;
             color:#fff;
+            padding:10px;
+            width:100%;
             background:rgba(255,0,0,0.4);
         }
     }

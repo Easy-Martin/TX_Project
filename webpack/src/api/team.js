@@ -2,11 +2,10 @@
 import request from 'reqwest';
 const BASE_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8361';
 
-export const loginAction = (payload)=>{
+export const teamAction = payload =>{
     request({
         method:'post',
-        url:BASE_URL+'/home/admin/login',
-        data:{username:payload.username,password:payload.password},
+        url:BASE_URL+'/home/admin/team',
         type:'json'
     })
     .then(res =>{
@@ -16,11 +15,19 @@ export const loginAction = (payload)=>{
     })
 }
 
-export const logoutAction = (payload)=>{
+export const editteamAction = payload =>{
     request({
         method:'post',
-        url:BASE_URL+'/home/admin/logout',
-        type:'json'
+        url:BASE_URL+'/home/admin/editteam',
+        type:'json',
+        data:{
+            name:payload.name,
+            office:payload.office,
+            description:payload.description,
+            num:payload.num,
+            type:payload.type,
+            id:payload.id
+        }
     })
     .then(res =>{
         payload.callback(res);

@@ -13,7 +13,7 @@ export default class extends Base {
   }
   async historyAction(){
     //auto render template file index_history.html
-    let result = await this.model('history').order("year ASC,month ASC").select();
+    let result = await this.model('history').order("date ASC").select();
     this.assign('list',result);
     return this.display();
   }
