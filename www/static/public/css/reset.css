@@ -13,4 +13,5 @@ body{
     font-family:'Microsoft YaHei', 'Times', 'TimesNR', 'New Century Schoolbook',Georgia, 'New York', 'serif';
     font-size:12px;
     color:#333;
+    overflow-x: hidden;
 }
