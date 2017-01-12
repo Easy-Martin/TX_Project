@@ -26,9 +26,10 @@ export default class extends think.controller.base {
                 let fn = think.promisify(req.end, req);
                 return fn();
             });
-            console.log(result1.text)
-            console.log(result2.text)
-            console.log(result3.text)
+            console.log(result1.body.msg)
+            console.log(result2.body.msg)
+            console.log(result3.body.msg)
+            return this.json({date:[result1.body.msg,result2.body.msg,result3.body.msg]})
     }
     async limitAction(){
         let dataList = [{

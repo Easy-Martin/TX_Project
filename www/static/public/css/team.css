@@ -1,62 +1,107 @@
-.top{
-    height:646px;
-}
-.login_register ,.login_register a ,.login_register span{
+.login_register,
+.login_register a,
+.login_register span {
     color: #fd7303 !important;
-    
 }
-.login_register a{
+
+.login_register a {
     border-bottom: 1px solid #fd7303 !important;
 }
-.info{
-    height:500px;
+
+.info {
     position: relative;
-    background: #000;
+    text-align: center;
 }
-.info_ly{
-    height:500px;
+
+.content {
     width: 1200px;
-    background: url(/static/public/img/team.jpg) no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    background-size: 100% 100%;
-    position: absolute;
-    left:50%;
-    margin-left:-600px;
-}
-.content{
-    width: 1200px;
-    margin:0 auto;
-    padding:45px 0;
+    margin: 0 auto;
+    padding: 45px 0;
     overflow: hidden;
-    zoom:1;
+    zoom: 1;
 }
-.part{
-    width: 400px;
-    height:380px;
+
+.content h2 {
+    color: #fd7303;
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 32px;
+}
+
+.parent {
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.part {
+    flex: 1;
+    padding: 0 20px;
     padding-bottom: 70px;
-    float: left;
 }
-.part .icon{
-    display: block;
-    width: 16px;
-    height:68px;
-    background: #fd7303;
-    margin-bottom: 20px;
+
+.part dl {
+    position: relative;
+    width: 360px;
 }
-.part .zw{
-    font-size: 20px;
-    color:#737373;
-    padding-bottom: 14px;
-    font-weight: normal;
+
+.part .job {
+    display: table;
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    background: #eee;
+    border: 2px solid #fff;
+    text-align: center;
+    border-radius: 50%;
+    right: 18px;
+    top: 130px;
 }
-.part dt{
-    font-size:30px;
-    color:#000;
-    padding-bottom: 20px;
-}
-.part .des{
-    width: 302px;
-    line-height: 24px;
+
+.part .job p {
+    vertical-align: middle;
+    display: table-cell;
     font-size: 16px;
-    color:#737373;
+    font-weight: 400;
+    color: #999;
+}
+
+.part .job span {
+    display: block;
+    font-weight: normal;
+    color: #333;
+}
+
+.part .icon {
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    width: 100%;
+    overflow: hidden;
+    background: #eee;
+    border-radius: 20px;
+}
+
+.part .icon img {
+    vertical-align: bottom;
+}
+
+.part .des {
+    width: 100%;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 28px;
+    font-size: 16px;
+    color: #737373;
+    padding: 50px 36px 0;
+    background: #eee;
+    border-radius: 20px;
+    height: 268px;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-justify: inter-ideograph;
+    text-align: justify;
 }

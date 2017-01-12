@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>天禧嘉福 | 团队介绍</title>
     <%include inc/head.html%>
-    <link rel="stylesheet" href="/static/public/css/team.css">
+        <link rel="stylesheet" href="/static/public/css/team.css">
 </head>
+
 <body>
     <div class="top">
         <%include inc/header.html%>
-        <div class="info">
-            <div class="info_ly"></div>
-        </div>
+            <div class="info">
+                <img src="/static/public/img/team.jpg" alt="">
+            </div>
     </div>
     <div class="content">
-        <% list.forEach(function(item){%>
-        <div class="part">
-            <span class="icon"></span>
-            <dl>
-                <dd class="zw"><%=item.office%></dd>
-                <dt><%=item.name%></dt>
-                <dd class="des"><%=item.description%></dd>
-            </dl>
+        <h2>团队介绍</h2>
+        <div class="parent">
+            <% list.forEach(function(item){%>
+                <div class="part">
+
+                    <dl>
+                        <dd class="icon"><img src="<%=item.img%>" height="175" alt=""></dd>
+                        <dd class="job">
+                            <p><span><%=item.name%></span>
+                                <%=item.office%>
+                            </p>
+                        </dd>
+                        <dd class="des">
+                            <%=item.description%>
+                        </dd>
+                    </dl>
+                </div>
+                <%})%>
         </div>
-        <%})%>
     </div>
     <%include inc/footer.html%>
 </body>
+
 </html>
