@@ -29,18 +29,17 @@
 }
 
 .parent {
-    display: flex;
-    flex-flow: wrap;
-    align-content: center;
     width: 100%;
     box-sizing: border-box;
     background: #fff;
 }
 
 .part {
-    flex: 1;
-    padding: 0 20px;
+    width: 400px;
+    float: left;
     padding-bottom: 70px;
+    padding-left: 20px;
+    box-sizing: border-box;
 }
 
 .part dl {
