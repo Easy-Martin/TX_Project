@@ -3,10 +3,12 @@
     background: url(/static/public/img/bg.jpg) no-repeat center center;
     background-size: 100% 100%;
 }
+
 .login_register .icon {
-    background: url(/static/public/img/user.png) no-repeat center center  !important;
-    background-size:24px 24px  !important;
+    background: url(/static/public/img/user.png) no-repeat center center !important;
+    background-size: 24px 24px !important;
 }
+
 .content {
     width: 1200px;
     margin: 0 auto;
@@ -15,7 +17,7 @@
 
 .content_bar {
     width: 30%;
-    display: inline-block;
+    float: left;
     padding-top: 50px;
     height: 350px;
     margin: 0 1.5%;
@@ -88,12 +90,13 @@
     background-size: 100% 100%;
     position: relative;
 }
-.cnt2_img .bt2{
+
+.cnt2_img .bt2 {
     position: absolute;
-    left:50%;
+    left: 50%;
     width: 1200px;
     margin-left: -600px;
-    height:600px;
+    height: 600px;
     background: url(/static/public/img/bt2.png) no-repeat center center;
     background-size: 100% 100%;
 }
@@ -230,7 +233,7 @@
     left: 0;
     width: 300px;
     height: 92px;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
 }
 
 .jssort11 .tp {
@@ -240,20 +243,25 @@
     width: 100%;
     height: 100%;
     border: none;
-    border-bottom:8px solid;
+    border-bottom: 8px solid;
 }
-.jssort11 [data-u="slides"] div:nth-child(2) .tp{
+
+.jssort11 [data-u="slides"] div:nth-child(2) .tp {
     border-bottom-color: #fd7303;
 }
-.jssort11 [data-u="slides"] div:nth-child(3) .tp{
+
+.jssort11 [data-u="slides"] div:nth-child(3) .tp {
     border-bottom-color: #fffb81;
 }
-.jssort11 [data-u="slides"] div:nth-child(4) .tp{
+
+.jssort11 [data-u="slides"] div:nth-child(4) .tp {
     border-bottom-color: #b93617;
 }
-.jssort11 [data-u="slides"] div:nth-child(5) .tp{
+
+.jssort11 [data-u="slides"] div:nth-child(5) .tp {
     border-bottom-color: #4c1409;
 }
+
 .jssort11 .i,
 .jssort11 .pav:hover .i {
     position: absolute;
@@ -284,7 +292,7 @@
     color: #fff;
     font-size: 18px;
     font-weight: 400;
-    padding-top:20px;
+    padding-top: 20px;
 }
 
 .jssort11 .pav .t,
@@ -312,7 +320,7 @@
 .jssort11 .t,
 .jssort11 .c {
     transition: background 2s;
-    -moz-transition:background 2s;
+    -moz-transition: background 2s;
     -webkit-transition: background 2s;
     -o-transition: background 2s;
 }
@@ -329,10 +337,10 @@
 
 .jssort11 .p:hover,
 .jssort11 .pav:hover {
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .jssort11 .pav,
 .jssort11 .p.pdn {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
