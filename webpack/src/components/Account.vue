@@ -97,7 +97,7 @@
             }
         },
         created(){
-            Api.userlistAction({callback:res=>{
+            Api.userlistAction(this,{callback:res=>{
                 if(res.code==0){
                     this.accountList = res.data;
                 }
@@ -137,7 +137,7 @@
                         type:this.newAccount.actionType,
                         callback:result=>{
                             if(result.code==0){
-                                Api.userlistAction({callback:response=>{
+                                Api.userlistAction(this,{callback:response=>{
                                     if(response.code==0){
                                         this.accountList = response.data;
                                     }
@@ -161,7 +161,7 @@
                         }
                     }
                     this.newAccount.editloading = true;
-                    Api.edituserAction(res);
+                    Api.edituserAction(this,res);
                 }else{
                     return false
                 }
@@ -198,7 +198,7 @@
                     }
                 }
                 this.newAccount.resetloading = true;
-                Api.resetpasswdAction(res);
+                Api.resetpasswdAction(this,res);
             },
             delUser(){
                 if(this.newAccount.delloading){
@@ -209,7 +209,7 @@
                     type:'2',
                     callback:result=>{
                         if(result.code==0){
-                            Api.userlistAction({callback:response=>{
+                            Api.userlistAction(this,{callback:response=>{
                                 if(response.code==0){
                                     this.accountList = response.data;
                                 }
@@ -233,7 +233,7 @@
                     }
                 } 
                 this.newAccount.delloading = true;
-                Api.edituserAction(res);
+                Api.edituserAction(this,res);
             },
             validate(){
                 let s = true

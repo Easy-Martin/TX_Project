@@ -9,9 +9,9 @@ export default {
     log_connect: true,
     adapter: {
         mysql: {
-            host: '127.0.0.1',
+            host: '116.62.40.105',
             port: '3306',
-            database: 'mysql',
+            database: 'tx',
             user: 'root',
             password: '1234',
             prefix: '',

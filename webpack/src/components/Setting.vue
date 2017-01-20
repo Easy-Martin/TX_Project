@@ -102,7 +102,7 @@
             }
         },
         created(){
-            Api.getselfinfoAction({callback:res=>{
+            Api.getselfinfoAction(this,{callback:res=>{
                 if(res.code == 0){
                     this.info.username = res.data.username;
                     this.info.name = res.data.name;
@@ -123,7 +123,7 @@
                 });
             },
             editInfo(){
-                Api.editselfinfoAction({
+                Api.editselfinfoAction(this,{
                     name:this.info.name,
                     address:this.info.address,
                     mobile:this.info.mobile,
@@ -154,7 +154,7 @@
                 });
             },
             resetpasswd(){
-                Api.resetselfpasswdAction({
+                Api.resetselfpasswdAction(this,{
                     password:this.password.oldpassword,
                     repassword:this.password.repassword,
                     callback:res=>{

@@ -102,7 +102,7 @@
             }
         },
         created() {
-            Api.teamAction({
+            Api.teamAction(this,{
                 callback: res => {
                     this.form = res.data;
                 }
@@ -175,7 +175,7 @@
                 }
                 this.form[index].editLoading = true;
                 this.form[index].isNotice = false;
-                Api.editteamAction(res);
+                Api.editteamAction(this,res);
             },
             delTeam(index){
                 
@@ -195,7 +195,7 @@
                                 this.form[index].isNotice = false;
                             },2000);
                             setTimeout(()=>{
-                                Api.teamAction({
+                                Api.teamAction(this,{
                                     callback: res => {
                                         this.form = res.data;
                                     }
@@ -210,7 +210,7 @@
                 }
                 this.form[index].delLoading = true;
                 this.form[index].isNotice = false;
-                Api.editteamAction(res);
+                Api.editteamAction(this,res);
 
             },
             addTeam(){
@@ -227,7 +227,7 @@
                         this.newTeam.loading = false;
                         this.newTeam.isNotice = true;
                         if(res.code == 0){
-                            Api.teamAction({callback: res => {
+                            Api.teamAction(this,{callback: res => {
                                 if(res.code=='0'){
                                     this.form = res.data;
                                 }                            
@@ -273,7 +273,7 @@
                 }
                 this.newTeam.loading = true;
                 this.newTeam.isNotice = false;
-                Api.editteamAction(res);
+                Api.editteamAction(this,res);
                 
             }
         }

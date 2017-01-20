@@ -15,9 +15,9 @@
         }
     },
     created(){
-        Api.menulistAction({callback:(res)=>{
+        Api.menulistAction(this,{callback:(res)=>{
             if(res.code == 301){
-                sessionStorage.removeItem('LOGIN_SESSION');
+                sessionStorage.removeItem('TOKEN');
                 this.$router.replace('/');
                 return false;
             }

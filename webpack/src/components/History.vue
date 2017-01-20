@@ -99,7 +99,7 @@
             }
         },
         created() {
-            Api.historyAction({
+            Api.historyAction(this,{
                 callback: res => {
                     this.history = res.data;
                 }
@@ -156,7 +156,7 @@
                 }
                 this.history[index].editLoading = true;
                 this.history[index].isNotice = false;
-                Api.edithistoryAction(res);
+                Api.edithistoryAction(this,res);
             },
             delHistory(index){
                 if(this.history[index].delLoading){
@@ -175,7 +175,7 @@
                                 this.history[index].isNotice = false;
                             },1000);
                             setTimeout(()=>{
-                                Api.historyAction({
+                                Api.historyAction(this,{
                                     callback: res => {
                                         this.history = res.data;
                                     }
@@ -190,7 +190,7 @@
                 }
                 this.history[index].delLoading = true;
                 this.history[index].isNotice = false;
-                Api.edithistoryAction(res);
+                Api.edithistoryAction(this,res);
 
             },
             addTeam(){
@@ -205,7 +205,7 @@
                         this.newHistory.loading = false;
                         this.newHistory.isNotice = true;
                         if(res.code == 0){
-                            Api.historyAction({
+                            Api.historyAction(this,{
                                 callback: res => {
                                     this.history = res.data;
                                 }
@@ -245,7 +245,7 @@
                 }
                 this.newHistory.loading = true;
                 this.newHistory.isNotice = false;
-                Api.edithistoryAction(res);
+                Api.edithistoryAction(this,res);
                 
             }
         }

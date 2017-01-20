@@ -1,39 +1,37 @@
 'use strict';
 
 import Base from './base.js';
-
 const KEY = '__TX_ADMIN_USER__';
-export default class extends Base{
-    indexAction(){
+
+export default class extends Base {
+    indexAction() {
         return this.display();
     }
-    async loginAction(){
+    async loginAction() {
         let params = this.post();
         let password = think.md5(params.password + KEY);
-        let result = await this.model('user_sys').where({username:params.username,password:password}).find();
-        if(think.isEmpty(result)){
-            return this.fail('LOGIN_ERROR',result)
-        }else{
-            let token = think.uuid();
-            result.token = token;
-            await this.session("adminUserInfo", result);
-            return this.success({token:token,usrename:result.username,name:result.name});
+        let result = await this.model('user_sys').where({ username: params.username, password: password }).find();
+        if (think.isEmpty(result)) {
+            return this.fail('LOGIN_ERROR', result)
+        } else {
+            let token = global.SetToken({ uuid: result.uuid, username: result.username, name: result.name, role_id: result.role_id });
+            return this.success({ token: token, usrename: result.username, name: result.name });
         }
     }
-    async logoutAction(){
-        await this.session()
-        return this.success();
-    }
-    async menulistAction(){
-        let loginUserInfo = await this.session("adminUserInfo");
-        let res = await this.model('role_menu').where({role_id:loginUserInfo.role_id}).find();
+    async menulistAction() {
+        let token = this.http.headers['x-access-token'];
+        let loginUserInfo = null;
+        await global.verifyToken(token).then(res => {
+            loginUserInfo = res;
+        })
+        let res = await this.model('role_menu').where({ role_id: loginUserInfo.role_id }).find();
         let arr_id = res.menu_id.split(',');
-        let result = await this.model('menu_sys').where({menu_id:arr_id,allowed:'1'}).select();
+        let result = await this.model('menu_sys').where({ menu_id: arr_id, allowed: '1' }).select();
         return this.success(result)
     }
-    async teamAction(){
+    async teamAction() {
         let result = await this.model('team').order('num ASC').select();
-        result.forEach((item,index)=>{
+        result.forEach((item, index) => {
             item.editLoading = false;
             item.delLoading = false;
             item.isNotice = false;
@@ -42,37 +40,37 @@ export default class extends Base{
         })
         return this.success(result)
     }
-    async editteamAction(){
+    async editteamAction() {
         let params = this.post();
         console.log(params);
-        if(params.type == 0){
+        if (params.type == 0) {
             let insertId = await this.model('team').add({
-                name:params.name , 
+                name: params.name,
                 office: params.office,
-                description:params.description,
-                num:params.num,
-                id:think.uuid(10)
+                description: params.description,
+                num: params.num,
+                id: think.uuid(10)
             });
             return this.success();
         }
-        if(params.type == 1){
-            let affectedRows = await this.model('team').where({id:params.id}).update({
-                name:params.name , 
+        if (params.type == 1) {
+            let affectedRows = await this.model('team').where({ id: params.id }).update({
+                name: params.name,
                 office: params.office,
-                description:params.description,
-                num:params.num
+                description: params.description,
+                num: params.num
             });
             return this.success();
         }
-        if(params.type == 2){
-            let affectedRows = await this.model('team').where({id:params.id}).delete();
+        if (params.type == 2) {
+            let affectedRows = await this.model('team').where({ id: params.id }).delete();
             return this.success();
         }
         return this.fail('PARAM_ERROR');
     }
-    async historyAction(){
+    async historyAction() {
         let result = await this.model('history').order("date ASC").select();
-        result.forEach((item,index)=>{
+        result.forEach((item, index) => {
             item.editLoading = false;
             item.delLoading = false;
             item.isNotice = false;
@@ -81,150 +79,162 @@ export default class extends Base{
         })
         return this.success(result)
     }
-    async edithistoryAction(){
+    async edithistoryAction() {
         let params = this.post();
         let thisDate = new Date(params.date);
-        let year = think.datetime(thisDate,'YYYY');
-        let month = think.datetime(thisDate,'MM');
-        let date = think.datetime(thisDate,'YYYY-MM-DD');
-        if(params.type == 0){
+        let year = think.datetime(thisDate, 'YYYY');
+        let month = think.datetime(thisDate, 'MM');
+        let date = think.datetime(thisDate, 'YYYY-MM-DD');
+        if (params.type == 0) {
             let insertId = await this.model('history').add({
-                date:date , 
+                date: date,
                 year: year,
-                month:month,
-                info:params.info,
-                id:think.uuid(10)
+                month: month,
+                info: params.info,
+                id: think.uuid(10)
             });
             return this.success();
         }
-        if(params.type == 1){
-            let affectedRows = await this.model('history').where({id:params.id}).update({
-                date:date , 
+        if (params.type == 1) {
+            let affectedRows = await this.model('history').where({ id: params.id }).update({
+                date: date,
                 year: year,
-                month:month,
-                info:params.info,
+                month: month,
+                info: params.info,
             });
             return this.success();
         }
-        if(params.type == 2){
-            let affectedRows = await this.model('history').where({id:params.id}).delete();
+        if (params.type == 2) {
+            let affectedRows = await this.model('history').where({ id: params.id }).delete();
             return this.success();
         }
         return this.fail('PARAM_ERROR');
     }
-    async userlistAction(){
+    async userlistAction() {
         let result = await this.model('user_sys').order('create_time ASC').fieldReverse('password,role_id').select();
-        if(result.length>0){
-            result.forEach((item,index)=>{
-                item.update_time = think.datetime(new Date(item.update_time),'YYYY-MM-DD');
-                item.create_time = think.datetime(new Date(item.create_time),'YYYY-MM-DD');
+        if (result.length > 0) {
+            result.forEach((item, index) => {
+                item.update_time = think.datetime(new Date(item.update_time), 'YYYY-MM-DD');
+                item.create_time = think.datetime(new Date(item.create_time), 'YYYY-MM-DD');
             })
         }
         return this.success(result);
     }
-    async edituserAction(){
-        let loginUserInfo = await this.session("adminUserInfo");
+    async edituserAction() {
+        let token = this.http.headers['x-access-token'];
+        let loginUserInfo = null;
+        await global.verifyToken(token).then(res => {
+            loginUserInfo = res;
+        })
         let params = this.post();
 
         //新增
-        if(params.type=='0'){
-            let isRegister = await this.model('user_sys').where({username:params.username}).find();
-            if(!think.isEmpty(isRegister)){
+        if (params.type == '0') {
+            let isRegister = await this.model('user_sys').where({ username: params.username }).find();
+            if (!think.isEmpty(isRegister)) {
                 return this.fail('USERNAME_ERROR_REGISTERED');
             }
-            let role = await this.model('role').where({type:'2'}).find();
+            let role = await this.model('role').where({ type: '2' }).find();
             let password = think.md5(params.password + KEY);
             let userInfo = {
-                uuid:think.uuid(),
-                role_id:role.role_id,
-                update_time:think.datetime(),
-                create_time:think.datetime(),
-                username:params.username,
-                name:params.name,
-                password:password,
-                update_by:loginUserInfo.username,
-                mobile:params.mobile,
-                address:params.address
+                uuid: think.uuid(),
+                role_id: role.role_id,
+                update_time: think.datetime(),
+                create_time: think.datetime(),
+                username: params.username,
+                name: params.name,
+                password: password,
+                update_by: loginUserInfo.username,
+                mobile: params.mobile,
+                address: params.address
             }
             let insertId = await this.model('user_sys').add(userInfo);
             return this.success();
         }
         //更新
-        if(params.type=='1'){
-            let isRegister = await this.model('user_sys').where({username:params.username}).find();
-            if(think.isEmpty(isRegister)){
+        if (params.type == '1') {
+            let isRegister = await this.model('user_sys').where({ username: params.username }).find();
+            if (think.isEmpty(isRegister)) {
                 return this.fail('USERNAME_ERROR_NOT_FOUND');
             }
-            if(isRegister.uuid === 'FIsUzXrajrMAJz6RsVVAfsq6eZMIITND'){
+            if (isRegister.uuid === 'FIsUzXrajrMAJz6RsVVAfsq6eZMIITND') {
                 return this.fail('USERNAME_ADMIN_ERROR');
             }
             let userInfo = {
-                update_time:think.datetime(),
-                username:params.username,
-                name:params.name,
-                update_by:loginUserInfo.username,
-                mobile:params.mobile,
-                address:params.address
+                update_time: think.datetime(),
+                username: params.username,
+                name: params.name,
+                update_by: loginUserInfo.username,
+                mobile: params.mobile,
+                address: params.address
             }
-            let insertId = await this.model('user_sys').where({uuid:params.uuid}).update(userInfo);
+            let insertId = await this.model('user_sys').where({ uuid: params.uuid }).update(userInfo);
             return this.success();
         }
         //删除
-        if(params.type=='2'){
-            let isRegister = await this.model('user_sys').where({uuid:params.uuid}).find();
-            if(think.isEmpty(isRegister)){
+        if (params.type == '2') {
+            let isRegister = await this.model('user_sys').where({ uuid: params.uuid }).find();
+            if (think.isEmpty(isRegister)) {
                 return this.fail('USERNAME_ERROR_NOT_FOUND');
             }
-            if(isRegister.uuid === 'FIsUzXrajrMAJz6RsVVAfsq6eZMIITND'){
+            if (isRegister.uuid === 'FIsUzXrajrMAJz6RsVVAfsq6eZMIITND') {
                 return this.fail('USERNAME_ADMIN_ERROR');
             }
-            let insertId = await this.model('user_sys').where({uuid:params.uuid}).delete();
+            let insertId = await this.model('user_sys').where({ uuid: params.uuid }).delete();
             return this.success();
         }
         return this.fail('PARAM_ERROR');
     }
-    async resetpasswdAction(){
+    async resetpasswdAction() {
         let params = this.post();
         let password = think.md5('123456' + KEY);
-        let insertId = await this.model('user_sys').where({uuid:params.uuid}).update({password:password});
+        let insertId = await this.model('user_sys').where({ uuid: params.uuid }).update({ password: password });
         return this.success();
     }
-    async getselfinfoAction(){
-        let loginUserInfo = await this.session("adminUserInfo");
-        return this.success({
-            username:loginUserInfo.username,
-            name:loginUserInfo.name,
-            address:loginUserInfo.address,
-            mobile:loginUserInfo.mobile,
+    async getselfinfoAction() {
+        let token = this.http.headers['x-access-token'];
+        let loginUserInfo = null;
+        await global.verifyToken(token).then(res => {
+            loginUserInfo = res;
         })
+        let result = await this.model('user_sys').where({ uuid: loginUserInfo.uuid }).fieldReverse('password,role_id').find();
+        return this.success(result)
     }
-    async editselfinfoAction(){
+    async editselfinfoAction() {
         let params = this.post();
         let a = (params.name.length > 0) ? true : false;
-        if(think.isEmpty(params) || !a ){
+        if (think.isEmpty(params) || !a) {
             return this.fail('PARAM_ERROR');
         }
-        let loginUserInfo = await this.session("adminUserInfo");
-        let insertId = await this.model('user_sys').where({uuid:loginUserInfo.uuid}).update({
-            name:params.name,
-            address:params.address,
-            mobile:params.mobile,
+        let token = this.http.headers['x-access-token'];
+        let loginUserInfo = null;
+        await global.verifyToken(token).then(res => {
+            loginUserInfo = res;
+        })
+        let insertId = await this.model('user_sys').where({ uuid: loginUserInfo.uuid }).update({
+            name: params.name,
+            address: params.address,
+            mobile: params.mobile,
         })
         return this.success()
     }
-    async resetselfpasswdAction(){
+    async resetselfpasswdAction() {
         let params = this.post();
-        if(!params.password || !params.repassword){
+        if (!params.password || !params.repassword) {
             return this.fail('PARAM_ERROR');
         }
-        let loginUserInfo = await this.session("adminUserInfo");
+        let token = this.http.headers['x-access-token'];
+        let loginUserInfo = null;
+        await global.verifyToken(token).then(res => {
+            loginUserInfo = res;
+        })
         let oldpassword = think.md5(params.password + KEY);
-        let isSelf = await this.model('user_sys').where({uuid:loginUserInfo.uuid,password:oldpassword}).find();
-        if(think.isEmpty(isSelf)){
+        let isSelf = await this.model('user_sys').where({ uuid: loginUserInfo.uuid, password: oldpassword }).find();
+        if (think.isEmpty(isSelf)) {
             return this.fail('LOGIN_ERROR');
         }
         let newpassword = think.md5(params.repassword + KEY);
-        let insertId = await this.model('user_sys').where({uuid:loginUserInfo.uuid}).update({password:newpassword});
+        let insertId = await this.model('user_sys').where({ uuid: loginUserInfo.uuid }).update({ password: newpassword });
         return this.success();
     }
 }

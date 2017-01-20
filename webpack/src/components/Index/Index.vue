@@ -11,7 +11,7 @@
         </el-row>
       </div>
       <div class="info">
-        <span class="text">欢迎您，{{userInfo.name}}</span>
+        <span class="text">欢迎您，{{loginName}}</span>
         <span class="logout"><i title="登出" class="el-icon-delete2" @click="logout"></i></span>
       </div>
     </div>
@@ -36,23 +36,19 @@
     date() {
         return {
             rightWidth: 0,
-            userInfo:{}
+            loginName:''
         }
-    },
-    created(){
-        this.userInfo = JSON.parse(sessionStorage.getItem('LOGIN_SESSION'));
     },
     mounted() {
         this.rightWidth = document.documentElement.clientWidth - this.$refs.right.getBoundingClientRect().left;
     },
+    created(){
+      this.loginName = sessionStorage.getItem('LOGIN_NAME');
+    },
     methods:{
         logout(){
-          Api.logoutAction({callback:res=>{
-            if(res.code == 0){
-              sessionStorage.removeItem('LOGIN_SESSION');
-              window.location.reload()
-            }
-          }})
+          sessionStorage.clear('TOKEN');
+          this.$router.replace('/login');
         }
     },
     components: {
