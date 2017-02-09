@@ -23,12 +23,7 @@ global.SetToken = function(params) {
 global.verifyToken = function(token) {
     return new Promise((resolve, reject) => {
         jwt.verify(token, KEY_SECRET, (err, decoded) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(decoded)
-            }
-
+            err ? reject(err) : resolve(decoded);
         });
     })
 }
