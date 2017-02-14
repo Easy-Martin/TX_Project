@@ -1,6 +1,6 @@
 <style>
     .login {
-        height: 85px;
+        height: 91px;
     }
     
     .login_register {
@@ -26,8 +26,8 @@
     }
     
     .nav {
-        height: 60px;
-        background: #fd7304
+        height: 91px;
+        background: #4b4b4b
     }
     
     .cnt_center {
@@ -37,41 +37,44 @@
     }
     
     .logo {
-        display: inline-block;
+        float: left;
         background: url(/static/public/img/logo.jpg);
-        width: 300px;
+        width: 295px;
         height: 100%;
     }
     
     .nav_bar {
-        float: right;
+        padding-left: 72px;
+        height: 100%;
+        float: left;
+        padding-top: 30px;
+        box-sizing: border-box;
     }
     
     .nav_bar a {
         display: inline-block;
         text-align: center;
         color: #fff;
-        padding-top: 10px;
-        font-size: 14px;
-        margin-left: 30px;
+        font-size: 16px;
+        padding: 4px 0;
+        width: 108px;
+        text-align: center;
+        border-right: 1px solid #ddd;
+    }
+    
+    .nav_bar a:last-child {
+        border: none;
     }
 </style>
-<div class="login">
-    <div class="cnt_center">
-        <div class="login_register">
-            <span class="icon"></span>
-            <span>会员</span> <a href="/">登陆</a> / <a href="/">注册</a>
-        </div>
-    </div>
-</div>
 <div class="nav">
     <div class="cnt_center">
         <a href="/" class="logo"></a>
         <div class="nav_bar">
-            <a href="/">首页<br><span>HOME</span></a>
-            <a href="/">乐慕<br><span>LAMOURSE</span></a>
-            <a href="/">前戏<br><span>PROJOY</span></a>
-            <a href="/">会员中心<br><span>USER ENTER</span></a>
+            <a href="/">首页</a>
+            <a href="/">服务</a>
+            <a href="/">案例</a>
+            <a href="/">了解我们</a>
+            <a href="/">合作伙伴</a>
         </div>
     </div>
 </div>

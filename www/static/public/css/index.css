@@ -1,7 +1,5 @@
 .top {
     height: 800px;
-    background: url(/static/public/img/bg.jpg) no-repeat center center;
-    background-size: 100% 100%;
 }
 
 .login_register .icon {
@@ -70,7 +68,7 @@
     height: 56px;
     margin: 0 auto;
     padding: 0 236px;
-    width: 1200px;
+    width: 1920px;
     box-sizing: border-box;
     margin-bottom: 20px;
 }
@@ -84,7 +82,7 @@
 }
 
 .cnt2_img {
-    height: 600px;
+    height: 708px;
     width: 100%;
     background: url(/static/public/img/bt.jpg) no-repeat center center;
     background-size: 100% 100%;
@@ -94,11 +92,68 @@
 .cnt2_img .bt2 {
     position: absolute;
     left: 50%;
-    width: 1200px;
-    margin-left: -600px;
-    height: 600px;
+    width: 1920px;
+    margin-left: -960px;
+    height: 708px;
     background: url(/static/public/img/bt2.png) no-repeat center center;
     background-size: 100% 100%;
+}
+
+.slider_layout {
+    height: 708px;
+    width: 1920px;
+    position: relative;
+    left: 50%;
+    margin-left: -960px;
+}
+
+.bes_info {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.bes_info_left {
+    width: 830px;
+    float: left;
+}
+
+.bes_info_left dl {
+    float: left;
+    margin-right: 4px;
+    position: relative;
+}
+
+.bes_info_left dt {
+    width: 272px;
+    height: 69px;
+    margin-bottom: 15px;
+}
+
+.bes_info_left dt span {
+    font-size: 20px;
+}
+
+.bes_info_left dd {
+    font-size: 16px;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.bes_info_left .hz2 {
+    position: absolute;
+    left: 90px;
+    top: 84px;
+}
+
+.bes_info_left dd span {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #000;
 }
 
 
@@ -112,6 +167,10 @@
         .jssorb01 .av:hover     (active mouseover)
         .jssorb01 .dn           (mousedown)
         */
+
+#jssor_1 {
+    height: 708px !important;
+}
 
 .jssorb01 {
     position: absolute;
@@ -224,7 +283,9 @@
           (mousedown)*/
 
 #jssort11 {
-    top: 563px !important;
+    top: 620px !important;
+    left: 50% !important;
+    margin-left: -600px;
 }
 
 .jssort11 .p {
