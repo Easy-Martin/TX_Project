@@ -7,10 +7,16 @@
     background-size: 24px 24px !important;
 }
 
+.content_layout {
+    width: 100%;
+    background: #f4f4f4
+}
+
 .content {
     width: 1200px;
     margin: 0 auto;
-    height: 400px;
+    overflow: hidden;
+    zoom: 1;
 }
 
 .content_bar {
@@ -19,20 +25,20 @@
     padding-top: 50px;
     height: 350px;
     margin: 0 1.5%;
-    background: #fff no-repeat center 50px;
+    background: none no-repeat center 50px;
     position: relative;
 }
 
 .content_bar_1 {
-    background-image: url(/static/public/img/1.jpg)
+    background-image: url(/static/public/img/1.png)
 }
 
 .content_bar_2 {
-    background-image: url(/static/public/img/2.jpg)
+    background-image: url(/static/public/img/2.png)
 }
 
 .content_bar_3 {
-    background-image: url(/static/public/img/3.jpg)
+    background-image: url(/static/public/img/3.png)
 }
 
 .content_bar h2 {
@@ -64,39 +70,41 @@
 }
 
 .nav_2 {
-    background: #fd7304;
     height: 56px;
+    width: 1200px;
     margin: 0 auto;
-    padding: 0 236px;
-    width: 1920px;
     box-sizing: border-box;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .nav_2 a {
     display: inline-block;
-    padding-left: 120px;
+    width: 180px;
     font-size: 16px;
-    color: #fff;
+    color: #fd7303;
     padding-top: 15px;
+    text-align: center;
 }
 
 .cnt2_img {
-    height: 708px;
-    width: 100%;
+    width: 1920px;
+    height: 600px;
     background: url(/static/public/img/bt.jpg) no-repeat center center;
     background-size: 100% 100%;
     position: relative;
+    left: 50%;
+    margin-left: -960px;
 }
 
-.cnt2_img .bt2 {
-    position: absolute;
-    left: 50%;
+.cnt3_img {
     width: 1920px;
-    margin-left: -960px;
-    height: 708px;
-    background: url(/static/public/img/bt2.png) no-repeat center center;
+    height: 293px;
+    background: url(/static/public/img/bt2.jpg) no-repeat center center;
     background-size: 100% 100%;
+    position: relative;
+    left: 50%;
+    margin-left: -960px;
 }
 
 .slider_layout {
@@ -110,6 +118,8 @@
 .bes_info {
     width: 1200px;
     margin: 0 auto;
+    overflow: hidden;
+    zoom: 1;
 }
 
 .bes_info_left {
@@ -154,6 +164,15 @@
     height: 4px;
     border-radius: 50%;
     background: #000;
+}
+
+.bes_info_right {
+    float: right;
+}
+
+.bes_info_right h2 {
+    text-align: center;
+    padding: 20px 0 10px 0;
 }
 
 
