@@ -120,6 +120,7 @@
     margin: 0 auto;
     overflow: hidden;
     zoom: 1;
+    margin-bottom: 30px;
 }
 
 .bes_info_left {
@@ -173,6 +174,10 @@
 .bes_info_right h2 {
     text-align: center;
     padding: 20px 0 10px 0;
+}
+
+.bes_info_right img {
+    border: 1px solid #eee;
 }
 
 
