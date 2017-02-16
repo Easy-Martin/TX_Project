@@ -2,11 +2,6 @@
     height: 800px;
 }
 
-.login_register .icon {
-    background: url(/static/public/img/user.png) no-repeat center center !important;
-    background-size: 24px 24px !important;
-}
-
 .content_layout {
     width: 100%;
     background: #f4f4f4

@@ -1,13 +1,3 @@
-.login_register,
-.login_register a,
-.login_register span {
-    color: #fd7303 !important;
-}
-
-.login_register a {
-    border-bottom: 1px solid #fd7303 !important;
-}
-
 .title {
     text-align: center;
     padding: 30px 0 52px;
