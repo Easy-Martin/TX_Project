@@ -34,4 +34,13 @@ export default class extends Base {
         this.assign('list', result);
         return this.display();
     }
+    usAction() {
+        return this.display()
+    }
+    partnerAction() {
+        return this.display()
+    }
+    customerAction() {
+        return this.display()
+    }
 }

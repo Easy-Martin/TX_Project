@@ -1,0 +1,33 @@
+body {
+    background: #f8f8f8;
+}
+
+.content {
+    width: 990px;
+    margin: 0 auto;
+    overflow: hidden;
+    zoom: 1;
+    padding-top: 37px;
+    min-height: 400px;
+    height: auto;
+}
+
+.left ul li:last-child {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background: #f8f8f8;
+}
+
+.right {
+    width: 700px;
+    float: right;
+    font-size: 16px;
+}
+
+.right .part {
+    margin-bottom: 30px;
+}
+
+.right .part h2 {
+    padding-bottom: 10px;
+}
